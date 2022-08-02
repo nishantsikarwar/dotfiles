@@ -1,0 +1,79 @@
+# ~/.config/starship.toml
+
+[battery]
+full_symbol = "🔋 "
+charging_symbol = "⚡️ "
+discharging_symbol = "💀 "
+
+[[battery.display]] # "bold red" style and discharging_symbol when capacity is between 0% and 10%
+threshold = 10
+style = "bold red"
+
+[[battery.display]] # "bold yellow" style and 💦 symbol when capacity is between 10% and 30%
+threshold = 30
+style = "bold yellow"
+discharging_symbol = "💦"
+
+# when capacity is over 30%, the battery indicator will not be displayed
+
+
+[character]
+success_symbol = "[➜](bold green) "
+error_symbol = "[✗](bold red) "
+
+[memory_usage]
+disabled = false
+threshold = -1
+symbol = " "
+style = "bold dimmed green"
+
+# ~/.config/starship.toml
+
+[sudo]
+style = "bold green"
+symbol = "👩‍💻 "
+disabled = false
+
+# ~/.config/starship.toml
+
+[username]
+# style_user = "white bold"
+# style_root = "black bold"
+# format = "user: [$user]($style) "
+# disabled = false
+# show_always = true
+
+# ~/.config/starship.toml
+
+[time]
+# disabled = false
+# format = '🕙[\[ $time \]]($style) '
+# time_format = "%T"
+# utc_time_offset = "+5:30"
+# time_range = "00:00:00-24:00:00"
+
+# ~/.config/starship.toml
+
+[git_status]
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
+
+# ~/.config/starship.toml
+
+[fill]
+symbol = "-"
+style = "bold green"
+
+# ~/.config/starship.toml
+
+# A minimal left prompt
+format = """$character"""
+
+# move the rest of the prompt to the right
+right_format = """$all"""
+
+# ~/.config/starship.toml
+
+# A continuation prompt that displays two filled in arrows
+continuation_prompt = "▶▶"
