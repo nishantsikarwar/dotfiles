@@ -1,4 +1,4 @@
-# PerpetualTemplate
+# PerpetualSetupTemplate
 
 This the Template repo for creating a new repo on Github and getting started with mimimun setup and complete  all the basic boilerplate things skipped.
 
@@ -10,8 +10,13 @@ The Content here will be update regularly and maybe in future i will create a to
 
 ```
 clone this repo 
-gh repo clone nishantsikarwar/PerpetualTemplate
+gh repo clone nishantsikarwar/dotfiles
 
 move it to the active working dir of your project
 and paste it 
 ```
+
+### AIM
+
+- To Create an automated setup for work.
+- Create for the necessary link and Config 
