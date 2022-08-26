@@ -54,3 +54,5 @@ fish
 # [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 alias config="git --git-dir=$HOME/.cfg --work-tree=$HOME"
+alias docs="git --git-dir=$HOME/.sdysp --work-tree=$HOME"
+

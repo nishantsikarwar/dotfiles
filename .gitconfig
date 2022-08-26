@@ -33,6 +33,6 @@
 [core]
 	excludesfile = /Users/nishantsikarwar/.gitignore_global
 [commit]
-	gpgSign = false
+	gpgsign = true
 [gpg]
 	program = gpg
