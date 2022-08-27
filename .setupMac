@@ -1,0 +1,32 @@
+#!/bin/bash
+
+#Brew Install 
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+#Xcode Command Line Tools
+xcode-select --install 
+
+#Checking Git Installation 
+if [ "$color_prompt" = yes ]; then
+    git --version
+    GIT_IS_AVAILABLE=$?
+    if [ $GIT_IS_AVAILABLE -eq 0 ]; then
+        # Git is not installed
+    else
+        # Install Git and Github CLI and Make Build System.
+        brew install git gh make
+        git --version 
+        gh --version
+        make --version
+    fi
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+
+#Terminal Setup 
+brew install starship
+starship --version
+git clone https://gitlab.com/dwt1/shell-color-scripts.git
+cd shell-color-scripts
+sudo make install
+
