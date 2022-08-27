@@ -1,7 +1,7 @@
 [user]
 	email = nsikarwar@ch.iitr.ac.in
 	name = nishantsikarwar
-	signingKey = DA9611300ADB9E317241613890D06D640073DC5D
+	signingkey = DA9611300ADB9E317241613890D06D640073DC5D
 
 [color "branch"]
     current = blue reverse
@@ -35,4 +35,4 @@
 [commit]
 	gpgsign = true
 [gpg]
-	program = gpg
+	program = gpg2

@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 FROM ubuntu:22.04
-ARG SETUP_FILE = .setupMac
+ARG SETUP_FILE=.setupMac
 WORKDIR /PerpetualProjectSetup
 COPY . .
 RUN apt-get update
