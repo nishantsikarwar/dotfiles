@@ -5,6 +5,7 @@ WORKDIR /PerpetualProjectSetup
 COPY . .
 RUN apt update
 RUN apt install -y curl
+RUN git --version
 RUN chmod +x ${SETUP_FILE} 
 RUN ./${SETUP_FILE}
 RUN colorscript random 
