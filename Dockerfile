@@ -3,7 +3,8 @@ FROM ubuntu:22.04
 ARG SETUP_FILE=.setupMac
 WORKDIR /PerpetualProjectSetup
 COPY . .
-RUN apt-get update
+RUN apt update
+RUN apt install curl
 RUN chmod +x ${SETUP_FILE} 
 RUN ./${SETUP_FILE}
 RUN colorscript random 
