@@ -4,7 +4,7 @@ ARG SETUP_FILE=.setupMac
 WORKDIR /PerpetualProjectSetup
 COPY . .
 RUN apt update
-RUN apt install -y git curl
+RUN apt install -y git curl make
 RUN git --version
 RUN chmod +x ${SETUP_FILE} 
 RUN ./${SETUP_FILE}

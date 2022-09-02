@@ -1,32 +1,65 @@
 #!/bin/bash
 
 #Brew Install 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+URL_BREW='https://raw.githubusercontent.com/Homebrew/install/master/install'
 
-#Xcode Command Line Tools
-xcode-select --install 
+echo -n '- Installing brew ... '
+echo | ruby -e "$(curl -fsSL $URL_BREW)" > /dev/null
+if [ $? -eq 0 ]; then echo 'OK'; else echo 'NG'; fi
 
-#Checking Git Installation 
-if [ "$color_prompt" = yes ]; then
+#!/usr/bin/env bash
+
+if [ "$(uname)" == "Darwin" ]; then
+    # Do something under Mac OS X platform 
+    #Xcode Command Line Tools
+    xcode-select --install
+    #Checking Git Installation 
     git --version
     GIT_IS_AVAILABLE=$?
     if [ $GIT_IS_AVAILABLE -eq 0 ]; then
         # Git is not installed
+        git --version
     else
-        # Install Git and Github CLI and Make Build System.
+    # Install Git and Github CLI and Make Build System.
         brew install git gh make
         git --version 
         gh --version
         make --version
     fi
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+
+    #Terminal Setup 
+    sh -c "$(curl -fsSL https://starship.rs/install.sh)" -y -f
+    starship --version
+    git clone https://gitlab.com/dwt1/shell-color-scripts.git
+    cd shell-color-scripts
+    make install
+    colorscript random 
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+    # Do something under GNU/Linux platform
+    sudo apt update
+    #Checking Git Installation 
+    git --version
+    GIT_IS_AVAILABLE=$?
+    if [ $GIT_IS_AVAILABLE -eq 0 ]; then
+        # Git is not installed
+        git --version
+    else
+    # Install Git and Github CLI and Make Build System.
+        sudo apt install -y git gh make
+        git --version 
+        gh --version
+        make --version
+    fi
+
+    #Terminal Setup 
+    sh -c "$(curl -fsSL https://starship.rs/install.sh)" -y -f
+    starship --version
+    git clone https://gitlab.com/dwt1/shell-color-scripts.git
+    cd shell-color-scripts
+    make install
+    colorscript random
 fi
 
-#Terminal Setup 
-brew install starship
-starship --version
-git clone https://gitlab.com/dwt1/shell-color-scripts.git
-cd shell-color-scripts
-sudo make install
+
+
 
