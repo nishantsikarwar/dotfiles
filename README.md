@@ -19,4 +19,8 @@ and paste it
 ### AIM
 
 - To Create an automated setup for work.
-- Create for the necessary link and Config 
+- Create for the necessary link and Config. 
+- Create Standard guidlines for the workspace setup.
+
+### Setup
+- Setup the Workstation as per the [guidelines](./.cmds/guidelines.md).
