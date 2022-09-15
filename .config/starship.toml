@@ -14,6 +14,11 @@ threshold = 30
 style = "bold yellow"
 discharging_symbol = "💦"
 
+[[battery.display]] # "bold green" style and ⚡️ symbol when capacity is charging
+threshold = 100
+style = "bold green"
+charging_symbol = "⚡️ "
+
 # when capacity is over 30%, the battery indicator will not be displayed
 
 
