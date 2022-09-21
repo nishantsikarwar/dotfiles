@@ -56,3 +56,9 @@ fish
 alias config="git --git-dir=$HOME/.cfg --work-tree=$HOME"
 alias docs="git --git-dir=$HOME/.sdysp --work-tree=$HOME"
 
+# # #prompt spaceship
+# echo "source $(brew --prefix)/opt/spaceship/spaceship.zsh" >>! ~/.zshrc
+# source /usr/local/opt/spaceship/spaceship.zsh
+# source /usr/local/opt/spaceship/spaceship.zsh
+# source /usr/local/opt/spaceship/spaceship.zsh
+# source /usr/local/opt/spaceship/spaceship.zsh
