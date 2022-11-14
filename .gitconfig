@@ -38,3 +38,5 @@
 	program = gpg2
 [trace2]
 	# perfTarget = /Users/nishantsikarwar/.log.perf
+[http]
+	cookiefile = /Users/nishantsikarwar/.gitcookies
