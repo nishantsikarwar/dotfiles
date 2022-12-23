@@ -9,6 +9,7 @@ alias config="git --git-dir=$HOME/.cfg --work-tree=$HOME"
 alias docs="git --git-dir=$HOME/.sdysp --work-tree=$HOME"
 [ -f /usr/local/share/autojump/autojump.fish ]; and source /usr/local/share/autojump/autojump.fish
 set GOPATH $HOME/go
+set PATH /Users/nishantsikarwar/go/src/k8s.io/kubernetes/third_party/etcd:$PATH
 enable_transience
 
 # set GNUBINS "$(find `brew --prefix`/opt -type d -follow -name gnubin -print)"
