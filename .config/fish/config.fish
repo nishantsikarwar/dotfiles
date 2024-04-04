@@ -3,7 +3,7 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 starship init fish | source
-colorscript --exec doom-original
+colorscript --exec doom-outlined
 alias ls='lsd -la'
 alias config="git --git-dir=$HOME/.cfg --work-tree=$HOME"
 alias docs="git --git-dir=$HOME/.sdysp --work-tree=$HOME"
@@ -24,6 +24,6 @@ enable_transience
 # set GNUBINS "$(find (brew --prefix)/opt -type d -follow -name gnubin -print)"
 # # export GNUBINS="$(find /usr/local/opt -type d -follow -name gnubin -print)";
 
-# for bindir in $GNUBINS; 
+# for bindir in $GNUBINS;
 #   set PATH $bindir:$PATH;
 # end;

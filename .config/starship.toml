@@ -82,3 +82,6 @@ right_format = """$all"""
 
 # A continuation prompt that displays two filled in arrows
 continuation_prompt = "▶▶"
+
+command_timeout = 1000
+
