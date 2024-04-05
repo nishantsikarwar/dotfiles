@@ -12,6 +12,14 @@ set GOPATH $HOME/go
 set PATH /Users/nishantsikarwar/go/src/k8s.io/kubernetes/third_party/etcd:$PATH
 enable_transience
 
+set -gx PATH $HOME/.jenv/bin $PATH
+status --is-interactive; and source (jenv init -|psub)
+
+# fish
+fzf --fish | source
+set -Ux FZF_DEFAULT_OPTS '--height 40% --layout=reverse --border'
+
+
 # set GNUBINS "$(find `brew --prefix`/opt -type d -follow -name gnubin -print)"
 
 # for bindir in ${GNUBINS[@]}
