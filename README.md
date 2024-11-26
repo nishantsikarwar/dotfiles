@@ -27,3 +27,6 @@ and paste it
 
 ### Setup
 - Setup the Workstation as per the [guidelines](./.cmds/guidelines.md).
+
+
+    To Do Complete the setup
