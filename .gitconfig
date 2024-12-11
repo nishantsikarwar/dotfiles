@@ -9,13 +9,28 @@
     remote = green
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(bold yellow)%d%Creset %s %C(bold green)(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-[alias]
-    bs = branch --all --color="always" --sort="authordate" --format="%(color:blue)%(authordate:relative);%(color:red)%(authorname);%(color:white)%(color:bold)%(refname:short)"  
+	save = !git add -A && git commit -v -m 'SAVEPOINT'
+	undo = reset HEAD~1 --mixed
+	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' --no-verify && git reset HEAD~1 --hard
+	findcommit = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
+	findmessage = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+	bs = branch --all --color="always" --sort="authordate" --format="%(color:blue)%(authordate:relative);%(color:red)%(authorname);%(color:white)%(color:bold)%(refname:short)"
 
 [log]
 	decorate = full
 [color]
 	ui = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
@@ -32,6 +47,7 @@
 	defaultBranch = main
 [core]
 	excludesfile = /Users/nishantsikarwar/.gitignore_global
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [commit]
 	gpgsign = true
 [gpg]
