@@ -51,7 +51,7 @@
 [commit]
 	gpgsign = true
 [gpg]
-	program = gpg2
+	program = /usr/local/bin/gpg
 [trace2]
 	# perfTarget = /Users/nishantsikarwar/.log.perf
 [http]
